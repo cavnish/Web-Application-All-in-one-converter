@@ -1,3 +1,4 @@
+// src/types/index.ts
 export interface ConversionTool {
   id: string;
   name: string;
@@ -22,9 +23,18 @@ export interface UploadedFile {
   outputFile?: ConvertedFile;
 }
 
+export interface ConvertedFile {
+  id: string;
+  name: string;
+  size: number;
+  type: string;
+  downloadUrl: string;
+}
+
 export interface ConversionSettings {
   quality?: number;
   format: string;
   resolution?: string;
   compression?: number;
+  customSettings?: Record<string, any>;
 }
